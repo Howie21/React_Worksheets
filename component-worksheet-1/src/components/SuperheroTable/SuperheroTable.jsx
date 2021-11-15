@@ -1,16 +1,17 @@
 import React from 'react';
 import "./SuperheroTable.css"
+import 'bootstrap/dist/css/bootstrap.css';
 
 function SuperheroTable(props) {
     return ( 
-        <div >
-        <table className="Ttable">
+        <div className="row">
+        <table striped bordered hover variant= "dark">
             <thead>
                 <tr>
-                    <th>Superhero ID</th>
-                    <th>Title</th>
-                    <th>Primary Ability</th>
-                    <th>Secondary Ability</th>
+                    <th className="col-3">Superhero ID</th>
+                    <th className="col-3">Title</th>
+                    <th className="col-3">Primary Ability</th>
+                    <th className="col-3">Secondary Ability</th>
                 </tr>
             </thead>
             <tbody>
