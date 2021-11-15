@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import DisplayName from './components/DisplayName/DisplayName';
+import NamesList from './components/NamesList/NamesList';
 
 import './App.css';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kelly']
+         }
     }
 
 
@@ -14,6 +17,7 @@ class App extends Component {
         return (
             <div className="container-fluid">
                 <DisplayName />
+                <NamesList namesList = {this.state.names}/>
             </div>
         )
     }
