@@ -1,0 +1,8 @@
+.nameFormat {
+    padding: 1px;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    text-shadow: 5px cyan;
+    color: maroon;
+}

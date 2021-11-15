@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DisplayName from './components/DisplayName/DisplayName';
 
 import './App.css';
 
@@ -12,7 +13,7 @@ class App extends Component {
     render(){
         return (
             <div className="container-fluid">
-                
+                <DisplayName />
             </div>
         )
     }
