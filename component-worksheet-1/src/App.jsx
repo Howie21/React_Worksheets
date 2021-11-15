@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DisplayName from './components/DisplayName/DisplayName';
 import NamesList from './components/NamesList/NamesList';
+import AlertUser from './components/AlertUser/AlertUser';
 
 import './App.css';
 
@@ -12,12 +13,16 @@ class App extends Component {
          }
     }
 
+    alertDevCodeCamp() {
+        alert("devCodeCamp!!")
+    }
 
     render(){
         return (
             <div className="container-fluid">
                 <DisplayName />
                 <NamesList namesList = {this.state.names}/>
+                <AlertUser alertUserFunction={this.alertDevCodeCamp}/>
             </div>
         )
     }
