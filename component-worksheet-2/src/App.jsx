@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import SuperheroCreate from './components/SuperheroCreate/SuperheroCreate';
 
 class App extends Component {
   constructor(props) {
@@ -7,19 +8,16 @@ class App extends Component {
     this.state = { 
       superheroes: [
         {
-            superheroId: 1,
             name: 'Batman',
             primaryAbility: 'Wealthy',
             secondaryAbility: 'Rich'
         },
         {
-            superheroId: 2,
             name: 'Superman',
             primaryAbility: 'Super strength',
             secondaryAbility: 'Fly'
         },
         {
-            superheroId: 3,
             name: 'Spiderman',
             primaryAbility: 'Spider senses',
             secondaryAbility: 'Shoots web'
@@ -27,10 +25,17 @@ class App extends Component {
     ]
      }
   }
+
+  sendSuperheroDatabase = (newHero) => {
+    this.state.superheroes.push(newHero);
+    console.log(newHero);
+    console.log(this.state.superheroes);
+  }
+
   render() { 
     return ( 
       <div className="container-fluid">
-
+          <SuperheroCreate appendFunction= {this.sendSuperheroDatabase} />
       </div>
     );
   }

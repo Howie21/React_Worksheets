@@ -31,17 +31,42 @@ class SuperheroCreate extends Component {
             default:
                 break;
         }
-        this.this.setState({ 
+        this.setState({ 
             [event.target.name]: event.target.value,
             errors: errors  
         });
     }
 
-    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.appendFunction(this.state)
+    }
+
+
 
     render() { 
         return ( 
-
+            <form onSubmit={(event) => this.handleSubmit(event)}>
+                <h3 style={{color:"blue"}}> Create New Hero </h3>
+                <div>
+                    <label>Superhero Name:</label>
+                    <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
+                </div>
+                    {this.state.errors.name ? <p style={{color:"red"}}>{this.state.errors.name}</p> : ""}
+                <div>
+                    <label>New Hero Primary Ability</label>
+                    <input type="text" name="primaryAbility" onChange={this.handleChange} value={this.state.primaryAbility} />
+                </div>
+                    {this.state.errors.primaryAbility ? <p style={{color:"red"}}>{this.state.errors.primaryAbility}</p> : ""}
+                <div>
+                    <label>New Hero Secondary Ability</label>
+                    <input type="text" name="secondaryAbility" onChange={this.handleChange} value={this.state.secondaryAbility} />
+                </div>
+                    {this.state.errors.secondaryAbility ? <p style={{color:"red"}}>{this.state.errors.secondaryAbility}</p> : ""}
+                <div>
+                    <button type="submit"> Add Hero! </button>
+                </div>
+            </form>
          );
     }
 }
