@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SuperheroCreate from './components/SuperheroCreate/SuperheroCreate';
+import JokesAPI from './components/JokesAPI/JokesAPI';
 
 class App extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class App extends Component {
     return ( 
       <div className="container-fluid">
           <SuperheroCreate appendFunction= {this.sendSuperheroDatabase} />
+          <JokesAPI />
       </div>
     );
   }
